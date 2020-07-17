@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <title>Course</title>
+</head>
+<body>
+    {% include "bzh.html" %}
+    <h1>{{ course_list }}</h1>
+    <h2>{{ course_list.0 }}</h2>
+    <h2>{{ course_list.1 }}</h2>
+    <h2>{{ course_list.2 }}</h2>
+    <p>{{ skill.level0|first|upper }}</p>
+    <p>{{ skill.level1|upper }}</p>
+    <p>{{ skill.level2|lower }}</p>
+    <p>course num: {{ course_list|length }}</p>
+    <p>{{ time|date:"Y-m-d:H" }}</p>
+    <p>{{ course_list.2|truncatechars:4 }}</p>
+    <p>{{ link|safe }}</p>
+    <p>
+        {% if course_list|length > 1 %}
+        Cool
+        {% else %}
+        Bad
+        {% endif %}
+    </p>
+    {% if name > 10 %}
+    <p>男</p>
+    {% else %}
+    <p>女</p>
+    {% endif %}
+    <ul>
+    {% for course in course_list reversed %}
+        <li>{{ course|length }}</li>
+    {% endfor %}
+    </ul>
+    {# this is a comment. #}
+</body>
+</html>
