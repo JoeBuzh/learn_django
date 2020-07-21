@@ -1,4 +1,4 @@
-"""HelloWorld URL Configuration
+"""app01 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -17,22 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from . import views
-from . import testdb
-from . import search
-from . import search2
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', views.hello),
-    path('we/', views.hiwe),
-    path('course/', views.hicourse),
-    path('case0/', views.case0),
-    path('insertdb/', testdb.insertdb),
-    path('querydb/', testdb.querydb),
-    path('updatedb/', testdb.updatedb),
-    path('deletedb/', testdb.deletedb),
-    path('search-form/', search.search_form),
-    path('search/', search.search),
-    path('search-post/', search2.search_post),
+    path('add_book1/', views.add_book1),
+    path('add_book2/', views.add_book2),
 ]
